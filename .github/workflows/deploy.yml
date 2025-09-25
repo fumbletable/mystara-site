@@ -2,8 +2,7 @@ name: Deploy Quartz site to GitHub Pages
 on:
   push:
     branches: [v4]
-  env:
-    THEME_NAME: its-theme
+
 permissions:
   contents: read
   pages: write
@@ -20,8 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: Install Dependencies
-      - name: Fetch Quartz Theme
-	  run: curl -s -S https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
+
 
         run: npm ci
       - name: Build Quartz
